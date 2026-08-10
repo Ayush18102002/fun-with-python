@@ -1,6 +1,6 @@
 # 🐍 Fun with Python
 
-A collection of Python mini-projects and utilities built to explore Python programming, automation, and multimedia processing. This repository contains practical scripts that demonstrate different Python libraries and real-world use cases.
+A collection of Python mini-projects and utilities built to explore Python programming, automation, multimedia processing, image manipulation, and PDF utilities. This repository contains practical scripts that demonstrate different Python libraries and real-world use cases.
 
 ## 📂 Repository Structure
 
@@ -17,6 +17,12 @@ fun-with-python/
 ├── video-to-gif/
 │   └── mediapy.py
 │
+├── background_removal/
+│   └── removal.py
+│
+├── pdf_protector/
+│   └── protect.py
+│
 └── README.md
 ```
 
@@ -30,7 +36,7 @@ Generate a calendar for any month and year directly from the terminal.
 
 * Accepts user input for month and year.
 * Displays a formatted monthly calendar.
-* Built using Python's `calendar` module.
+* Built using Python's built-in `calendar` module.
 
 **Example**
 
@@ -72,13 +78,67 @@ Convert videos into animated GIFs using Python.
 * Built using the `mediapy` library.
 * Useful for creating short animations or demonstrations.
 
+---
+
+### 🖼️ Background Removal
+
+Remove the background from images automatically using Python.
+
+**Features**
+
+* Removes image backgrounds automatically.
+* Uses the `rembg` library for AI-powered background removal.
+* Uses `PIL (Pillow)` for image processing.
+* Can generate images with transparent backgrounds.
+* Useful for profile pictures, product images, graphics, and other image-processing tasks.
+
+**Libraries Used**
+
+* `rembg`
+* `Pillow`
+
+The main script is located at:
+
+```text
+background_removal/removal.py
+```
+
+---
+
+### 🔐 PDF Protector
+
+Encrypt PDF files with a password to help protect them from unauthorized access.
+
+**Features**
+
+* Takes a PDF file as input.
+* Allows the user to set a password.
+* Encrypts the PDF using the `pypdf` library.
+* Creates a protected PDF file.
+* Useful for securing personal or sensitive documents.
+
+**Library Used**
+
+* `pypdf`
+
+The main script is located at:
+
+```text
+pdf_protector/protect.py
+```
+
+---
+
 ## 🛠️ Technologies Used
 
-* Python
-* Calendar Module
-* gTTS (Google Text-to-Speech)
-* Microsoft Edge TTS
-* MediaPy
+* **Python**
+* **Calendar Module**
+* **gTTS** – Google Text-to-Speech
+* **Edge TTS** – Microsoft Edge Text-to-Speech
+* **MediaPy** – Video and media processing
+* **rembg** – AI-powered image background removal
+* **Pillow (PIL)** – Image processing
+* **pypdf** – PDF processing and encryption
 
 ## 📦 Installation
 
@@ -94,34 +154,52 @@ Move into the project directory:
 cd fun-with-python
 ```
 
-Install the required packages:
+Install the required Python packages:
 
 ```bash
-pip install -r requirements.txt
+pip install gTTS edge-tts mediapy rembg pillow pypdf
 ```
 
-> If a `requirements.txt` file is not available, install the required libraries manually.
+> The Calendar Generator uses Python's built-in `calendar` module, so no additional package is required for it.
 
 ## ▶️ Running the Projects
 
 Run any project using Python.
 
-Example:
+### 📅 Calendar Generator
 
 ```bash
 python calendar/calendar.py
 ```
 
+### 🔊 Google Text-to-Speech
+
 ```bash
 python text-to-speech/google-gtts.py
 ```
+
+### 🔊 Microsoft Edge TTS
 
 ```bash
 python text-to-speech/microsoft-edge-tts.py
 ```
 
+### 🎥 Video to GIF
+
 ```bash
 python video-to-gif/mediapy.py
+```
+
+### 🖼️ Background Removal
+
+```bash
+python background_removal/removal.py
+```
+
+### 🔐 PDF Protector
+
+```bash
+python pdf_protector/protect.py
 ```
 
 ## 🎯 Purpose
@@ -131,11 +209,16 @@ This repository is a collection of Python practice projects designed to:
 * Learn Python programming.
 * Explore useful third-party libraries.
 * Build small but practical applications.
-* Improve problem-solving and automation skills.
+* Work with images, audio, video, and PDF files.
+* Explore automation and multimedia processing.
+* Improve problem-solving and programming skills.
+* Experiment with different Python libraries and real-world use cases.
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and improvements are welcome. Feel free to fork the repository and submit a pull request.
+Contributions, suggestions, and improvements are welcome.
+
+Feel free to fork the repository, make your changes, and submit a pull request.
 
 ## ⭐ Support
 
