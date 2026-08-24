@@ -1,19 +1,26 @@
+Absolutely. I’d update the README to include the new `youtube_video_download/` project, its `main.py`, the `yt-dlp` dependency, and the **FFmpeg requirement** because `yt-dlp` may need FFmpeg to merge separate video/audio streams.
+
+I also aligned the repository structure with what is currently visible in your VS Code Explorer.
+
 # 🐍 Fun with Python
 
-A collection of Python mini-projects and utilities built to explore Python programming, automation, AI, multimedia processing, image manipulation, text-to-speech, and PDF utilities.
+A collection of Python mini-projects and utilities built to explore Python programming, automation, AI, multimedia processing, image manipulation, text-to-speech, PDF utilities, and video downloading.
 
-This repository contains practical scripts that demonstrate different Python libraries and real-world use cases.
+This repository contains practical Python scripts that demonstrate different libraries and real-world use cases.
+
+---
 
 ## 📂 Repository Structure
 
 ```text
 fun-with-python/
+
 │
 ├── background_removal/
 │   └── removal.py
 │
-├── calendar/
-│   └── calendar.py
+├── calender/
+│   └── calender.py
 │
 ├── chatbot-gemini/
 │   └── main.py
@@ -22,21 +29,27 @@ fun-with-python/
 │   └── protect.py
 │
 ├── text-to-speech/
-│   ├── google-gtts.py
-│   └── microsoft-edge-tts.py
-│
-├── video-to-gif/
-│   └── mediapy.py
+│   ├── edge-tts-microsoft.py
+│   └── text-to-voice.py
 │
 ├── video_to_text/
+│   └── main.py
+│
+├── video-to-gif/
+│   └── video-to-gif.py
+│
+├── youtube_video_download/
 │   └── main.py
 │
 ├── venv/
 │
 ├── .gitignore
 ├── LICENSE
-└── README.md
+├── README.md
+└── pyvenv.cfg
 ```
+
+---
 
 ## 🚀 Projects
 
@@ -57,7 +70,7 @@ Enter Year: 2026
 Enter Month: 8
 ```
 
-The program prints the calendar for the selected month.
+The program prints the formatted calendar for the selected month.
 
 ---
 
@@ -81,7 +94,7 @@ from google import genai
 **Main script**
 
 ```text
-geminie-chatbot/main.py
+chatbot-gemini/main.py
 ```
 
 **Library**
@@ -105,7 +118,7 @@ import whisper
 **Features**
 
 * Accepts video files as input.
-* Extracts the audio from the video.
+* Extracts audio from the video.
 * Transcribes spoken content into text.
 * Uses the Whisper speech-recognition model.
 
@@ -125,7 +138,7 @@ video_to_text/main.py
 
 ### 🔊 Text-to-Speech
 
-Convert text into natural-sounding speech using two different approaches.
+Convert text into natural-sounding speech using different text-to-speech approaches.
 
 #### 1. Google gTTS
 
@@ -147,18 +160,41 @@ Uses Microsoft's Edge Text-to-Speech voices to generate high-quality speech.
 * Multiple languages and voices.
 * Supports different voice options.
 
+**Project files**
+
+```text
+text-to-speech/
+├── edge-tts-microsoft.py
+└── text-to-voice.py
+```
+
+**Libraries**
+
+* `gTTS`
+* `edge-tts`
+
 ---
 
 ### 🎥 Video to GIF Converter
 
-Convert videos into animated GIFs using Python.
+Convert videos into animated GIF files using Python.
 
 **Features**
 
 * Reads video files.
 * Converts video frames into GIF format.
-* Built using the `mediapy` library.
+* Uses the `mediapy` library.
 * Useful for creating short animations and demonstrations.
+
+**Main script**
+
+```text
+video-to-gif/video-to-gif.py
+```
+
+**Library**
+
+* `mediapy`
 
 ---
 
@@ -170,20 +206,20 @@ Remove backgrounds from images automatically using AI.
 
 * Automatically removes image backgrounds.
 * Uses `rembg` for AI-powered background removal.
-* Uses `PIL (Pillow)` for image processing.
+* Uses `Pillow` for image processing.
 * Supports transparent-background images.
 * Useful for profile pictures, product images, graphics, and other image-processing tasks.
-
-**Libraries**
-
-* `rembg`
-* `Pillow`
 
 **Main script**
 
 ```text
 background_removal/removal.py
 ```
+
+**Libraries**
+
+* `rembg`
+* `Pillow`
 
 ---
 
@@ -198,15 +234,52 @@ Encrypt PDF files with a password to help protect them from unauthorized access.
 * Encrypts PDFs using the `pypdf` library.
 * Creates password-protected PDF files.
 
-**Library**
-
-* `pypdf`
-
 **Main script**
 
 ```text
 pdf_protector/protect.py
 ```
+
+**Library**
+
+* `pypdf`
+
+---
+
+### 📥 YouTube Video Downloader
+
+Download YouTube videos using Python and the `yt-dlp` library.
+
+The project uses:
+
+```python
+import yt_dlp
+```
+
+**Features**
+
+* Accepts a YouTube URL from the user.
+* Downloads YouTube videos using `yt-dlp`.
+* Supports video and audio formats available through `yt-dlp`.
+* Uses FFmpeg to merge separate video and audio streams when required.
+
+**Main script**
+
+```text
+youtube_video_download/main.py
+```
+
+**Library**
+
+* `yt-dlp`
+
+Install the Python package with:
+
+```bash
+pip install yt-dlp
+```
+
+> **Note:** FFmpeg is also required when `yt-dlp` needs to merge separate video and audio formats.
 
 ---
 
@@ -214,6 +287,7 @@ pdf_protector/protect.py
 
 * **Python** — Main programming language.
 * **Google Gen AI** — Gemini API integration.
+* **yt-dlp** — YouTube video downloading.
 * **Whisper** — Speech-to-text transcription.
 * **gTTS** — Google Text-to-Speech.
 * **Edge TTS** — Microsoft Edge Text-to-Speech.
@@ -223,9 +297,11 @@ pdf_protector/protect.py
 * **pypdf** — PDF processing and encryption.
 * **Calendar** — Python's built-in calendar module.
 
+---
+
 ## 📦 Installation
 
-Clone the repository:
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Ayush18102002/fun-with-python.git
@@ -237,11 +313,13 @@ Move into the project directory:
 cd fun-with-python
 ```
 
-Create and activate a virtual environment:
+### 2. Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
+
+### 3. Activate the Virtual Environment
 
 On Windows:
 
@@ -249,17 +327,32 @@ On Windows:
 venv\Scripts\activate
 ```
 
+On macOS/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+### 4. Install Python Dependencies
+
 Install the required packages:
 
 ```bash
-pip install gTTS edge-tts mediapy rembg pillow pypdf google-genai openai-whisper
+pip install gTTS edge-tts mediapy rembg pillow pypdf google-genai openai-whisper yt-dlp
 ```
 
-> The Calendar Generator uses Python's built-in `calendar` module, so no additional package is required.
+The Calendar Generator uses Python's built-in `calendar` module, so no additional package is required.
 
-### FFmpeg
+---
 
-The **Video to Text** project uses Whisper and requires FFmpeg for processing video and audio files.
+## ⚙️ FFmpeg
+
+Some projects in this repository require **FFmpeg**.
+
+FFmpeg is required by:
+
+* **Video to Text** — Whisper uses FFmpeg to process video and audio.
+* **YouTube Video Downloader** — `yt-dlp` can use FFmpeg to merge separate video and audio streams.
 
 After installing FFmpeg, verify that it is available from your terminal:
 
@@ -267,21 +360,31 @@ After installing FFmpeg, verify that it is available from your terminal:
 ffmpeg -version
 ```
 
+If the command displays the FFmpeg version, it is installed correctly.
+
+> **Windows:** FFmpeg must be added to your system `PATH` so that Python libraries and `yt-dlp` can find it.
+
+---
+
 ## ▶️ Running the Projects
 
 ### 📅 Calendar Generator
 
 ```bash
-python calendar/calendar.py
+python calender/calender.py
 ```
+
+---
 
 ### 🤖 Gemini Chatbot
 
 ```bash
-python geminie-chatbot/main.py
+python chatbot-gemini/main.py
 ```
 
 Make sure your Gemini API key is configured before running the chatbot.
+
+---
 
 ### 🎙️ Video to Text
 
@@ -291,23 +394,31 @@ python video_to_text/main.py
 
 Place your video file in the appropriate project directory or provide the correct path to the video in `main.py`.
 
+---
+
 ### 🔊 Google Text-to-Speech
 
 ```bash
-python text-to-speech/google-gtts.py
+python text-to-speech/text-to-voice.py
 ```
+
+---
 
 ### 🔊 Microsoft Edge TTS
 
 ```bash
-python text-to-speech/microsoft-edge-tts.py
+python text-to-speech/edge-tts-microsoft.py
 ```
+
+---
 
 ### 🎥 Video to GIF
 
 ```bash
-python video-to-gif/mediapy.py
+python video-to-gif/video-to-gif.py
 ```
+
+---
 
 ### 🖼️ Background Removal
 
@@ -315,11 +426,31 @@ python video-to-gif/mediapy.py
 python background_removal/removal.py
 ```
 
+---
+
 ### 🔐 PDF Protector
 
 ```bash
 python pdf_protector/protect.py
 ```
+
+---
+
+### 📥 YouTube Video Downloader
+
+```bash
+python youtube_video_download/main.py
+```
+
+The program will ask you for a YouTube URL:
+
+```text
+Youtube URL : Your Youtube Video Url
+```
+
+The video will then be downloaded using `yt-dlp`.
+
+---
 
 ## 🎯 Purpose
 
@@ -332,14 +463,19 @@ This repository is a collection of Python practice projects designed to:
 * Work with images, audio, video, and PDF files.
 * Explore speech-to-text and text-to-speech technologies.
 * Practice automation and multimedia processing.
+* Download online videos using Python.
 * Improve problem-solving and programming skills.
 * Experiment with different Python libraries and real-world use cases.
+
+---
 
 ## 🤝 Contributing
 
 Contributions, suggestions, and improvements are welcome.
 
 Feel free to fork the repository, make your changes, and submit a pull request.
+
+---
 
 ## ⭐ Support
 
