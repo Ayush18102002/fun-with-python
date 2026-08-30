@@ -1,7 +1,3 @@
-Absolutely. I’d update the README to include the new `youtube_video_download/` project, its `main.py`, the `yt-dlp` dependency, and the **FFmpeg requirement** because `yt-dlp` may need FFmpeg to merge separate video/audio streams.
-
-I also aligned the repository structure with what is currently visible in your VS Code Explorer.
-
 # 🐍 Fun with Python
 
 A collection of Python mini-projects and utilities built to explore Python programming, automation, AI, multimedia processing, image manipulation, text-to-speech, PDF utilities, and video downloading.
@@ -23,6 +19,9 @@ fun-with-python/
 │   └── calender.py
 │
 ├── chatbot-gemini/
+│   └── main.py
+│
+├── pdf_merger/
 │   └── main.py
 │
 ├── pdf_protector/
@@ -164,6 +163,7 @@ Uses Microsoft's Edge Text-to-Speech voices to generate high-quality speech.
 
 ```text
 text-to-speech/
+
 ├── edge-tts-microsoft.py
 └── text-to-voice.py
 ```
@@ -246,6 +246,64 @@ pdf_protector/protect.py
 
 ---
 
+### 📑 PDF Merger
+
+Merge multiple PDF files into a single PDF document using Python and the `pypdf` library.
+
+This project is useful when you have multiple PDF documents and want to combine them into one file.
+
+**Features**
+
+* Merges multiple PDF files into one PDF.
+* Uses the `pypdf` library.
+* Allows multiple PDF documents to be combined.
+* Creates a single output PDF file.
+* Useful for combining documents, reports, assignments, certificates, or other PDF files.
+
+**Main script**
+
+```text
+pdf_merger/main.py
+```
+
+**Library**
+
+* `pypdf`
+
+Install the required package with:
+
+```bash
+pip install pypdf
+```
+
+#### How to Use
+
+First, place or import the PDF files that you want to merge into the location expected by `main.py`.
+
+For example:
+
+```text
+pdf_merger/
+
+├── main.py
+├── file1.pdf
+├── file2.pdf
+├── file3.pdf
+└── ...
+```
+
+After adding the PDF files, run the Python script:
+
+```bash
+python pdf_merger/main.py
+```
+
+The program will merge the selected PDF files and create a single PDF containing all the pages.
+
+> **Note:** The order of the PDFs in the final document depends on the order in which they are provided to the script.
+
+---
+
 ### 📥 YouTube Video Downloader
 
 Download YouTube videos using Python and the `yt-dlp` library.
@@ -294,7 +352,7 @@ pip install yt-dlp
 * **MediaPy** — Video and media processing.
 * **rembg** — AI-powered image background removal.
 * **Pillow** — Image processing.
-* **pypdf** — PDF processing and encryption.
+* **pypdf** — PDF processing, merging, and encryption.
 * **Calendar** — Python's built-in calendar module.
 
 ---
@@ -342,6 +400,8 @@ pip install gTTS edge-tts mediapy rembg pillow pypdf google-genai openai-whisper
 ```
 
 The Calendar Generator uses Python's built-in `calendar` module, so no additional package is required.
+
+> **PDF Merger:** The PDF Merger project uses the `pypdf` package.
 
 ---
 
@@ -436,6 +496,32 @@ python pdf_protector/protect.py
 
 ---
 
+### 📑 PDF Merger
+
+First, add the PDF files that you want to merge to the location expected by the script.
+
+For example:
+
+```text
+pdf_merger/
+
+├── main.py
+├── document1.pdf
+├── document2.pdf
+├── document3.pdf
+└── ...
+```
+
+Then run:
+
+```bash
+python pdf_merger/main.py
+```
+
+The program will merge the PDFs into a single PDF file.
+
+---
+
 ### 📥 YouTube Video Downloader
 
 ```bash
@@ -463,6 +549,7 @@ This repository is a collection of Python practice projects designed to:
 * Work with images, audio, video, and PDF files.
 * Explore speech-to-text and text-to-speech technologies.
 * Practice automation and multimedia processing.
+* Merge and protect PDF documents.
 * Download online videos using Python.
 * Improve problem-solving and programming skills.
 * Experiment with different Python libraries and real-world use cases.
